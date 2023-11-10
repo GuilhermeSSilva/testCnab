@@ -1,48 +1,32 @@
-# Desafio tecnico leitor de arquivos CNAB
+<h1 align="center">Test Cnab</h1>
 
-Este desafio tem a proposta de melhorar uma CI que le arquivos cnab.
-Um CNAB é um arquivo posicional, sendo que cabeçalho é as duas primeiras linhas do arquivo e seu rodapé as duas ultimas.
+<p align="center">Ler Cnab</p>
 
-Ele é dividido por segmentos *P*, *Q* e *R*, cada linha começa com um codigo que tem no final o tipo de segmento:
+### Features
 
-```
-0010001300002Q 012005437734000407NTT BRASIL COMERCIO E SERVICOS DE TECNOLAVENIDA DOUTOR CHUCRI ZAIDAN, 1240 ANDARVILA SAO FRANCI04711130SAO PAULO      SP0000000000000000                                        000
-```
-Neste exemplo o **Q** aparece na posição/coluna 14, cada posição representa algo dentro do arquivo cnab.
+- [x] Buscar no Cnab através do nome da empresa.
+- [x] Pesquisar através do CLI o arquivo cnab.
+- [x] Cria um novo arquivo JSON com o nome da empresa e o endereço.
 
+### Pré-requisitos
 
-hoje ao rodar:
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-```bash
-node cnabRows.js
-```
-
-temos o seguinte output:
+### 🎲 Rodando o Back End (servidor)
 
 ```bash
-node cnabRows.js --help
-Uso: cnabRows.js [options]
+# Clone este repositório
+$ git clone https://github.com/GuilhermeSSilva/testCnab
 
-Opções:
-      --help      Exibe ajuda                                         [booleano]
-      --version   Exibe a versão                                      [booleano]
-  -f, --from      posição inicial de pesquisa da linha do Cnab
-                                                          [número] [obrigatório]
-  -t, --to        posição final de pesquisa da linha do Cnab
-                                                          [número] [obrigatório]
-  -s, --segmento  tipo de segmento                        [string] [obrigatório]
+# Acesse a pasta do projeto no terminal/cmd
+$ cd testCnab
 
-Exemplos:
-  cnabRows.js -f 21 -t 34 -s p  lista a linha e campo que from e to do cnab
+# Instale as dependências
+$ npm install
+
+# Execute o arquivo da aplicação
+$ node cnabRows.js [-p "Caminho do arquivo aqui, com /" -f "Número do índice do inicio da linha" -t "Número do índice do final da linha" -s "Letra referente ao segmento a ser buscado, opções (q, r, p)" -n "Nome da empresa aqui"]
+# O código deverá demonstrar um erro no prompt, caso a funcionalidade de busca via nome da companhia seja utilizada deve criar um novo arquivo JSON com os valores de nome da empresa e endereço.
 ```
-
-hoje a ferramenta busca uma posição e loga isso no terminal.
-
-desafio consiste:
-
-* poder passar na CLI o local do arquivo.
-* pesquisar por nome da empresa, e mostrar em que posição que ela foi achada e qual o tipo de segmento ela pertence.
-
-* **Bonus**, ler o cnab e escrever um novo arquivo em formato JSON, contendo nome e endereço da empresa.
-
-O candidato tem total liberdade de mudar a estrutura atual desse projeto, a ideía é ver a criatividade de resolver esse problema.
