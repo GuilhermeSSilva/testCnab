@@ -14,7 +14,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### 🎲 Rodando o Back End (servidor)
+### 🎲 Rodando o Back End
 
 ```bash
 # Clone este repositório
@@ -28,5 +28,5 @@ $ npm install
 
 # Execute o arquivo da aplicação
 $ node cnabRows.js [-p "Caminho do arquivo aqui, com /" -f "Número do índice do inicio da linha" -t "Número do índice do final da linha" -s "Letra referente ao segmento a ser buscado, opções (q, r, p)" -n "Nome da empresa aqui"]
-# O código deverá demonstrar um erro no prompt, caso a funcionalidade de busca via nome da companhia seja utilizada deve criar um novo arquivo JSON com os valores de nome da empresa e endereço.
+# O código deverá demonstrar um retorno no prompt, caso a funcionalidade de busca via nome da companhia seja utilizada deve criar um novo arquivo JSON com os valores de nome da empresa e endereço.
 ```
